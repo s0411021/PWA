@@ -1,15 +1,9 @@
-var GHPATH = '/github-page-pwa';
-var APP_PREFIX = 'gppwa_';
-var VERSION = 'version_002';
-var URLS = [    
-  `${GHPATH}/`,
-  `${GHPATH}/index.html`,
-  `${GHPATH}/css/styles.css`,
-  `${GHPATH}/img/icon.png`,
-  `${GHPATH}/js/app.js`
-]
+let GHPATH = '/PWA';
+let APP_PREFIX = 'pwa_';
+let VERSION = 'version_002';
+let URLS = []
 
-var CACHE_NAME = APP_PREFIX + VERSION
+let CACHE_NAME = APP_PREFIX + VERSION
 self.addEventListener('fetch', function (e) {
   console.log('Fetch request : ' + e.request.url);
   e.respondWith(
@@ -37,7 +31,7 @@ self.addEventListener('install', function (e) {
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (keyList) {
-      var cacheWhitelist = keyList.filter(function (key) {
+      let cacheWhitelist = keyList.filter(function (key) {
         return key.indexOf(APP_PREFIX)
       })
       cacheWhitelist.push(CACHE_NAME);
