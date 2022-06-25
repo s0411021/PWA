@@ -1,4 +1,3 @@
-let GHPATH = '/PWA';
 let APP_PREFIX = 'pwa_';
 let VERSION = 'version_002';
 let URLS = []
