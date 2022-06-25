@@ -1,4 +1,4 @@
-let APP_PREFIX = 'pwa_';
+let APP_PREFIX = 'PWA_';
 let VERSION = 'ver001';
 let cacheList = [];
 let CACHE_NAME = APP_PREFIX + VERSION
